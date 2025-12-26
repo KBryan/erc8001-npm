@@ -5,9 +5,9 @@
 Alice has 100 USDC. Bob has 0.05 WETH. They want to trade.
 
 **Without ERC-8001:**
-- Trust a centralized exchange? 💰 Fees, custody risk
-- Use a DEX? ⛽ Gas costs, slippage, MEV
-- Send first and hope? 🙏 Counterparty risk
+- Trust a centralized exchange?  Fees, custody risk
+- Use a DEX?  Gas costs, slippage, MEV
+- Send first and hope?  Counterparty risk
 
 **With ERC-8001:**
 - Alice proposes the swap (signs an intent)
@@ -35,8 +35,8 @@ Alice has 100 USDC. Bob has 0.05 WETH. They want to trade.
 │   Anyone calls execute()                                        │
 │   Tokens swap atomically                                        │
 │                                                                 │
-│   ✅ Alice: -100 USDC, +0.05 WETH                               │
-│   ✅ Bob:   +100 USDC, -0.05 WETH                               │
+│    Alice: -100 USDC, +0.05 WETH                               │
+│    Bob:   +100 USDC, -0.05 WETH                               │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -91,12 +91,12 @@ contract AtomicSwap is ERC8001 {
 ```
 
 That's it. The base `ERC8001` contract handles:
-- ✅ Intent creation and validation
-- ✅ EIP-712 signature verification
-- ✅ Acceptance tracking
-- ✅ Status management (Proposed → Ready → Executed)
-- ✅ Expiry and nonce handling
-- ✅ Cancellation
+- Intent creation and validation
+- EIP-712 signature verification
+- Acceptance tracking
+- Status management (Proposed → Ready → Executed)
+- Expiry and nonce handling
+- Cancellation
 
 You just implement `_executeCoordination` with your business logic.
 
